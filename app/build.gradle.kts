@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
-    id("com.chaquo.python")
 }
 
 android {
@@ -42,17 +41,11 @@ android {
     }
 }
 
-chaquopy {
-    defaultConfig {
-        version = "3.13"
-
-        pip {
-            install("google-play-scraper")
-        }
-    }
-}
 
 dependencies {
+    implementation(project(":core:model"))
+    implementation(project(":core:data"))
+    implementation(project(":core:designsystem"))
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)

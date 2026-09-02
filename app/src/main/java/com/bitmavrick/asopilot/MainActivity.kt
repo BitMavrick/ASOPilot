@@ -24,9 +24,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bitmavrick.asopilot.data.model.PlayStoreApp
-import com.bitmavrick.asopilot.data.repositoryImpl.PlayStoreRepositoryImpl
-import com.bitmavrick.asopilot.ui.theme.ASOPilotTheme
+import com.bitmavrick.asopilot.core.model.PlayStoreApp
+import com.bitmavrick.asopilot.core.data.repository.PlayStoreRepositoryImpl
+import com.bitmavrick.asopilot.core.designsystem.theme.ASOPilotTheme
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {

@@ -9,6 +9,8 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven { url = uri("https://chaquo.com/maven") }
+        maven { url = uri("https://chaquo.com/maven-test") }
     }
 }
 plugins {
@@ -19,8 +21,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://chaquo.com/maven") }
+        maven { url = uri("https://chaquo.com/maven-test") }
     }
 }
 
 rootProject.name = "ASOPilot"
 include(":app")
+include(":core:model")
+include(":core:data")
+include(":core:designsystem")  
+ 
