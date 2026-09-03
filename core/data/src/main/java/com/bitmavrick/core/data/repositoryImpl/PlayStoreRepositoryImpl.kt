@@ -5,7 +5,6 @@ import com.bitmavrick.core.model.PlayStoreApp
 import com.chaquo.python.Python
 
 class PlayStoreRepositoryImpl : PlayStoreRepository {
-
     private val python: Python by lazy {
         Python.getInstance()
     }

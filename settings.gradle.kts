@@ -26,3 +26,4 @@ rootProject.name = "ASOPilot"
 include(":app")
 include(":core:data")
 include(":core:model")
+include(":feature:home")

@@ -1,11 +1,10 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
-    id("com.chaquo.python")
 }
 
 android {
-    namespace = Config.APP_ID + ".asopilot" // "com.bitmavrick.asopilot"
+    namespace = Config.APP_ID + ".feature.home" // "com.bitmavrick.feature.home"
     compileSdk {
         version = release(
             version = Config.COMPILE_SDK_VERSION
@@ -13,25 +12,8 @@ android {
     }
 
     defaultConfig {
-        applicationId = Config.APP_ID + ".asopilot"
         minSdk = Config.MIN_SDK_VERSION
-        targetSdk = Config.TARGET_SDK_VERSION
-        versionCode = Config.VERSION_CODE
-        versionName = Config.VERSION_NAME
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        ndk {
-            abiFilters += listOf("arm64-v8a", "x86_64")
-        }
-    }
-
-    buildTypes {
-        release {
-            optimization {
-                enable = false
-            }
-        }
     }
 
     compileOptions {
@@ -44,21 +26,9 @@ android {
     }
 }
 
-chaquopy {
-    defaultConfig {
-        version = "3.13"
-
-        pip {
-            install("google-play-scraper")
-        }
-    }
-}
-
 dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:data"))
-
-    implementation(project(":feature:home"))
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
