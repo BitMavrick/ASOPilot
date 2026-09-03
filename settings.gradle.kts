@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ASOPilot"
 include(":app")
+include(":core:data")
