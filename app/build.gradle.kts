@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
-    id("com.chaquo.python")
 }
 
 android {
-    namespace = Config.APP_ID + ".asopilot" // "com.bitmavrick.asopilot"
+    namespace = Config.APP_ID + ".asopilot" // * "com.bitmavrick.asopilot"
     compileSdk {
         version = release(
             version = Config.COMPILE_SDK_VERSION
@@ -41,16 +40,6 @@ android {
 
     buildFeatures {
         compose = true
-    }
-}
-
-chaquopy {
-    defaultConfig {
-        version = "3.13"
-
-        pip {
-            install("google-play-scraper")
-        }
     }
 }
 

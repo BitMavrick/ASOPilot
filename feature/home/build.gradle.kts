@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = Config.APP_ID + ".feature.home" // "com.bitmavrick.feature.home"
+    namespace = Config.APP_ID + ".feature.home" // * "com.bitmavrick.feature.home"
     compileSdk {
         version = release(
             version = Config.COMPILE_SDK_VERSION
