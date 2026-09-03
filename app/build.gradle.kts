@@ -5,17 +5,19 @@ plugins {
 }
 
 android {
-    namespace = "com.bitmavrick.asopilot"
+    namespace = Config.APP_ID + ".asopilot" // "com.bitmavrick.asopilot"
     compileSdk {
-        version = release(37)
+        version = release(
+            version = Config.COMPILE_SDK_VERSION
+        )
     }
 
     defaultConfig {
-        applicationId = "com.bitmavrick.asopilot"
-        minSdk = 33
-        targetSdk = 37
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Config.APP_ID + ".asopilot"
+        minSdk = Config.MIN_SDK_VERSION
+        targetSdk = Config.TARGET_SDK_VERSION
+        versionCode = Config.VERSION_CODE
+        versionName = Config.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -33,8 +35,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildFeatures {
