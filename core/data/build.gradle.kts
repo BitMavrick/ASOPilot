@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    id("com.chaquo.python")
 }
 
 android {
@@ -12,14 +13,26 @@ android {
 
     defaultConfig {
         minSdk = Config.MIN_SDK_VERSION
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters += listOf("arm64-v8a", "x86_64")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
 
+chaquopy {
+    defaultConfig {
+        version = "3.13"
+
+        pip {
+            install("google-play-scraper")
+        }
+    }
 }
 
 dependencies {
